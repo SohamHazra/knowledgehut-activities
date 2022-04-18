@@ -1,0 +1,19 @@
+header{
+    text-align: center;
+    background-color: chartreuse;
+    color: crimson;
+    padding: 60px;
+}
+footer{
+    text-align: center;
+    background-color: rgb(98, 84, 224);
+    color: #FFF;
+    padding: 60px;
+    clear: both;
+}
+#i1{
+    color: aqua;
+}
+h2{
+    font-family:cursive;
+}
