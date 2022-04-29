@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #s2,#s1{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label>N1:</label>
+        <input type="text" name="n1" id="i1" onkeydown="return digit1(event)">
+        <span id="s1"></span>
+    </div><br>
+    <div>
+        <label>N2:</label>
+        <input type="text" name="n2" id="i2" onkeydown=" return digit2(event)">
+        <span id="s2"></span>
+    </div><br>
+    <div>
+        <label>ANS:</label>
+        <input type="text" name="ans" id="ans" disabled>
+        
+    </div><br>
+    <div>
+        <button type="submit" name="add" onclick="add()">ADD</button>
+        <button type="submit" name="sub" onclick="sub()">SUB</button>
+        <button type="submit" name="div" onclick="div()">DIV</button>
+        <button type="submit" name="mul" onclick="mul()">MUL</button>
+    </div>
+    <script type="text/javascript">
+        var dot1=0;
+        var dot2=0;
+        function digit1(e){
+            let exp=/[0-9.]/;
+            let value=e.key;
+            console.log(e.key);
+            let flag=exp.test(value);
+            let ele=document.getElementById('s1');
+            if(flag){
+                //------------------- DOT START ------------------
+                if(e.key=='.'){
+                    if(dot1==0){
+                        ele.innerHTML='';
+                        dot1=1;
+                    }
+                    else{
+                        ele.innerHTML='You can not put more than 1 dot';
+                        return false;
+                    }
+                //------------------- DOT END --------------------    
+                }
+                ele.innerHTML='';
+            }
+            else{
+                ele.innerHTML='You need to enter digits only';
+            }
+            return flag;
+        }
+
+
+        function digit2(e){
+            let exp=/[0-9.]/;
+            let value=e.key;
+            console.log(e.key);
+            let flag=exp.test(value);
+            let ele=document.getElementById('s2');
+            if(flag){
+                //------------------- DOT START ------------------
+                if(e.key=='.'){
+                    if(dot2==0){
+                        ele.innerHTML='';
+                        dot2=1;
+                    }
+                    else{
+                        ele.innerHTML='You can not put more than 1 dot';
+                        return false;
+                    }
+                //------------------- DOT END --------------------    
+                }
+                ele.innerHTML='';
+            }
+            else{
+                ele.innerHTML='You need to enter digits only';
+            }
+            return flag;
+        }
+
+
+        function add(){
+            var num1=document.getElementById('i1').value;
+            var num2=document.getElementById('i2').value;
+            var sum=parseFloat(num1)+parseFloat(num2);
+            document.getElementById('ans').value=sum;
+        }
+        function sub(){
+            var num1=document.getElementById('i1').value;
+            var num2=document.getElementById('i2').value;
+            var sum=parseFloat(num1)-parseFloat(num2);
+            document.getElementById('ans').value=sum;
+        }
+        function div(){
+            var num1=document.getElementById('i1').value;
+            var num2=document.getElementById('i2').value;
+            var sum=parseFloat(num1)/parseFloat(num2);
+            document.getElementById('ans').value=sum;
+        }
+        function mul(){
+            var num1=document.getElementById('i1').value;
+            var num2=document.getElementById('i2').value;
+            var sum=parseFloat(num1)*parseFloat(num2);
+            document.getElementById('ans').value=sum;
+        }
+    </script>
+</body>
+</html>
