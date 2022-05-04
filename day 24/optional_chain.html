@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        class user{
+            constructor(name="",contact=""){
+                this.name=name;
+                this.contact=contact;
+            }
+            disp(){
+                document.write(`Name: ${this.name}, Phone: ${this?.contact?.phone}, Email: ${this?.contact?.email}<br>`);
+            }
+        }
+        user1 = new user('Raj');
+        user2 = new user('Ajay', {phone: 993993, email: 52003});
+        user1.disp();
+        user2.disp();
+    </script>
+</body>
+</html>
