@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main"></div>
+    <script type="text/javascript">
+        function OTP(){
+            var otp=Math.random();
+            console.log(otp);
+            otp=otp*100000;
+            otp=Math.trunc(otp);
+            if(otp.toString().length<6){
+            otp=otp.toString().padEnd(6,'*');
+            var ele=document.getElementById('main');
+            ele.innerHTML=`Your otp is : ${otp}`;
+            }else{
+                OTP();
+            }
+        }
+        OTP();
+        
+    </script>
+</body>
+</html>
