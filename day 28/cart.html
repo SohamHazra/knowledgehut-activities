@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cartSize">Cart size:</div>
+    <div id="main">Cart: </div>
+    <script type="text/javascript">
+        var product=['mobile','laptop','AC','Gyser'];
+        var cartItem=[];
+        document.write(`<ul>`);
+        product.forEach((item,index)=>{
+            document.write(`<li>${item} <button onClick="addItem(${index})">Add ${item}</button></li>`)
+        });
+
+        function addItem(index){
+            var item=product[index];
+            // console.log(item);
+            cartItem.push(item);
+            // console.log(cartItem);
+            var cartSize=document.getElementById('cartSize');
+            cartSize.innerHTML=`Cart Size: ${cartItem.length}`;
+            var ele=document.getElementById('main');
+            var list='';
+            cartItem.forEach((item,index)=>{
+                list=list+`<li>${item} <button onClick="deleteItem(${index})">Delete ${item}</button></li>`
+            })
+            ele.innerHTML=list;
+        }
+
+        function deleteItem(cartItemIndex){
+            var cartItemIndex=cartItemIndex;
+            // console.log(cartItemIndex);
+            // console.log(cartItem);
+            cartItem.splice(cartItemIndex,1);
+
+            var cartSize=document.getElementById('cartSize');
+            cartSize.innerHTML=`Cart Size: ${cartItem.length}`;  
+            var ele=document.getElementById('main');
+            var list='';
+            cartItem.forEach((item,index)=>{
+                list=list+`<li>${item} <button onClick="deleteItem(${index})">Delete ${item}</button></li>`
+            })
+            ele.innerHTML=list;
+        }
+    </script>
+</body>
+</html>
