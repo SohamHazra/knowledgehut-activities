@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">List of products: </div>
+    Enter the product name: 
+    <input type="text" id="i1" name="input">
+    <button onClick="test()">Add</button>
+    <script type="text/javascript">
+        let m=new Set();
+
+        function test(){
+            let input=document.getElementById('i1').value;
+            let list='<ol>';
+            input=input.toLowerCase();
+            
+            m.forEach((v,i)=>{
+                if(v==input){
+                alert('Product is already there');
+                }
+            });    
+            if(input !=''){
+                m.add(input);
+            }
+            else{
+                alert('Please input some item');
+            }
+            
+            m.forEach((v,i)=>{
+                list=list+`<li>${v}</li>`
+                console.log(v);
+                console.log(m.size);
+            })
+            list=list+`</ol>`;
+            let ele=document.getElementById("main");
+            ele.innerHTML='List of products: '+list;
+        }
+    </script>
+</body>
+</html>
