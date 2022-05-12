@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="main"></div>
+    <div id="main">List of products: </div>
     Enter the product name: 
     <input type="text" id="i1" name="input">
     <button onClick="test()">Add</button>
@@ -22,11 +22,14 @@
             m.forEach((v,i)=>{
                 if(v==input){
                 alert('Product is already there');
-                    
                 }
             });    
-            
-            m.add(input);
+            if(input !=''){
+                m.add(input);
+            }
+            else{
+                alert('Please input some item');
+            }
             
             m.forEach((v,i)=>{
                 list=list+`<li>${v}</li>`
