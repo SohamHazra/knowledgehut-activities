@@ -12,13 +12,13 @@ console.log('Difference of 2 numbers = ',cal.sub());
 let {user,hi}=require('./namedExport');
 console.log('------------- NAMED EXPORT -------------');
 
-let Users= new user();
-console.log(Users.name('raj'));
-console.log(Users.age(25));
+// let Users= new user();
+// console.log(Users.name('raj'));
+// console.log(Users.age(25));
 
-// let Users= new user('Raj',25);
-// console.log(Users.name());
-// console.log(Users.age());
+let Users= new user('Raj',25);
+console.log(Users.name1());
+console.log(Users.age1());
 
 
 let Hi=new hi();

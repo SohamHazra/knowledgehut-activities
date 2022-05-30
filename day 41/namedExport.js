@@ -1,26 +1,26 @@
-class user{
-    name(name){
-        this.name=name;
-        return(`Hello ${this.name} !`);
-    }
-    age(age){
-        this.age=age;
-        return(`You are ${this.age} years old !!`);
-    }
-}
-
 // class user{
-//     constructor(name,age){
+//     name(name){
 //         this.name=name;
-//         this.age=age;
-//     }
-//     name(){
 //         return(`Hello ${this.name} !`);
 //     }
-//     age(){
+//     age(age){
+//         this.age=age;
 //         return(`You are ${this.age} years old !!`);
 //     }
 // }
+
+class user{
+    constructor(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    name1(){
+        return(`Hello ${this.name} !`);
+    }
+    age1(){
+        return(`You are ${this.age} years old !!`);
+    }
+}
 
 
 class hi{
