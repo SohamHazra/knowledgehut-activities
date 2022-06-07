@@ -21,7 +21,7 @@ do{
             let user='';
             let getDataById=readData();
             let getId=read.questionInt('Enter the Id to search: ');
-            getDataById.map((ele)=>ele.id==getId?user=`\nId: ${ele.id}\nName: ${ele.name}\nSalary: ${ele.salary}\n`:null);
+            getDataById.map((ele)=>ele.id===getId?user=`\nId: ${ele.id}\nName: ${ele.name}\nSalary: ${ele.salary}\n`:null);
             user.length>0?console.log(user):console.log('\nNo data Found !!\n');
             break;
         case 4:
